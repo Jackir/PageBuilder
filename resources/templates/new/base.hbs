@@ -1,0 +1,6 @@
+<h1>Průvodce tvorbou nového projektu</h1>
+<p>Tento průvodce Vám pomůže v několika krocích s tvorbou projektu. Všechna nastavení, která provedete se dají změnit po vytvoření projektu.</p>
+<form>
+<label for="name">Název projektu</label>{{input type="text" value=model.name name="name" required="required"}}
+</form>
+{{#link-to 'new.standards'}}<button{{action 'check'}}>Další</button>{{/link-to}}

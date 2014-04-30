@@ -1,0 +1,9 @@
+load:
+  - js/libs/jquery-1.10.2.js
+  - js/libs/handlebars-1.1.2.js
+  - js/libs/ember-1.5.0.js
+  - js/loader.js
+  - js/helpers.js
+  - js/resources.class.js
+test:
+  - tests/unit/loaderTest.js

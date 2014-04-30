@@ -1,0 +1,49 @@
+<p>Tato nastavení souvisí s výstupy programu. Pokud si nejse jisti nechte je tak jak jsou. Kdykoliv je můžete
+    změnit.</p>
+<table>
+    <tr>
+        <td>
+            <label>
+                {{webkit}}
+            </label>
+        </td>
+        <td>
+            {{view Ember.Checkbox checked=model.prefixes.webkit}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>
+                {{moz}}
+            </label>
+        </td>
+        <td>
+            {{view Ember.Checkbox checked=model.prefixes.moz}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>
+                {{opera}}
+            </label>
+        </td>
+        <td>
+            {{view Ember.Checkbox checked=model.prefixes.o}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>
+                {{ms}}
+            </label>
+        </td>
+        <td>
+            {{view Ember.Checkbox checked=model.prefixes.ms}}
+        </td>
+    </tr>
+</table>
+
+{{#link-to 'new.standards'}}
+    <button>Předchozí</button>
+{{/link-to}}
+<button {{action 'finish'}}>Finish</button>

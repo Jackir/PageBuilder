@@ -1,0 +1,29 @@
+<p>
+    Zde si vyberte standardy jazyků, které chcete, aby váš projekt podporoval. Vzhledem k rychlému zastarávání je
+    nejlepší volbou co nejnovější verze. Ovšem některé z prohlížečů mohou mít problémy se zobrazování některých
+    vlastností korektně.
+</p>
+<form>
+    <label for="html">HTML:</label>
+    {{view Ember.Select viewName="select"
+    content=htmls
+    optionLabelPath="content.name"
+    optionValuePath="content.version"
+    prompt="Podporovat verzi HTML:"
+    selection=model.standards.css
+    name="html"}}
+
+    <label for="css">CSS:</label>
+    {{view Ember.Select viewName="select"
+    content=csss
+    optionLabelPath="content.name"
+    optionValuePath="content.version"
+    prompt="Podporovat verzi CSS:"
+    selection=model.standards.css
+    name="css"}}
+
+</form>
+{{#link-to 'new.base'}}
+    <button>Předchozí</button>{{/link-to}}
+{{#link-to 'new.advanced'}}
+    <button>Další</button>{{/link-to}}

@@ -1,0 +1,110 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-family: 'Playfair Display SC', serif;
+    height: 100%;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+button {
+    padding: 4px;
+    border: 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+
+    border-radius: 10px;
+    background: #000000;
+    background: linear-gradient(top);
+    background: -moz-linear-gradient(top, #000000 0%, #000000 80%, #dbdbdb 93%, #a3a3a3);
+
+    background: -webkit-gradient(linear, left top, left bottom, from(#000000), color-stop(0.80, #000000), color-stop(0.93, #dbdbdb), to(#a3a3a3));
+
+    color: #ffffff;
+    -o-border-radius: 10px;
+}
+
+body {
+    background: url("../resources/images/dark-canvas.gif");
+}
+
+.circle {
+    display: block;
+    border: 2px dashed #ffffff;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+
+    background: radial-gradient(circle, blue 10%, #FFE373 100%);
+    background: #2989d8;
+    box-shadow: 0px 0px 0px 3px #2989d8;
+
+    color: #ffffff;
+}
+
+.circle div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.circle.big {
+    width: 200px;
+    height: 200px;
+}
+
+.circle.big div {
+    line-height: 200px;
+}
+
+.circle.middle {
+    width: 150px;
+    height: 150px;
+}
+
+.circle.middle div {
+    line-height: 150px;
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    margin: auto;
+    margin-top: 50px;
+    width: 809px;
+    height: 500px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 0px 2px #e0e3e0, 10px 10px 20px rgba(0, 0, 0, .5);
+    border: 2px dashed #ccc;
+    background: #e0e3e0;
+}
+
+.container div {
+    height: 100%;
+}
+
+.container div .progress {
+    float: left;
+    width: 245px;
+    height: 100%;
+    border-right: 2px dashed #ccc;
+}
+
+.container div .content {
+    margin-left: 30%;
+    padding: 10px;
+    width: 544px;
+}
+
+.shadowbox {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+}

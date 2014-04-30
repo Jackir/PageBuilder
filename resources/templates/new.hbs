@@ -1,0 +1,14 @@
+<div class="container">
+    <nav>
+        <div class="progress">
+            <ul>
+                <li>{{#link-to 'new.base'}}Základní nastavení{{/link-to}}</li>
+                <li>{{#link-to 'new.standards'}}Použité standardy{{/link-to}}</li>
+                <li>{{#link-to 'new.advanced'}}Pokročilá nastavení{{/link-to}}</li>
+            </ul>
+        </div>
+        <div class="content">
+            {{outlet}}
+        </div>
+    </nav>
+</div>
