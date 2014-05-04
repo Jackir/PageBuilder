@@ -1,0 +1,44 @@
+@import "_animation.scss";
+@import "_keyframes.scss";
+@import "_translate.scss";
+
+@include keyframe(fadeout){
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@include keyframe(dizzle){
+  0% {
+    @include translate(2px, 0px);
+  }
+
+  20% {
+    @include translate(-4px, 0px);
+
+  }
+
+  40% {
+    @include translate(4px, 0px);
+
+  }
+
+  60% {
+    @include translate(-4px, 0px);
+
+  }
+
+  80% {
+    @include translate(4px, 0px);
+
+  }
+
+  100% {
+    @include translate(-2px, 0px);
+
+  }
+}
