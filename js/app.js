@@ -1,65 +1,41 @@
-var project = {
-    name: '',
-    author: '',
-    standards: {
-        css: '3',
-        html: '5'
-    },
-    prefixes: {
-        webkit: true,
-        moz: true,
-        o: true,
-        ms: true
-    }
-};
-
-var ProjectIsSetUp = function () {
-    if (project.name == '')
-        return false;
-    if (project.standards.css == '')
-        return false;
-    if (project.standards.html == '')
-        return false;
-    return true;
-};
+var Communicator = new communicator("API", 5000);
 
 App.NewRoute = Ember.Route.extend({
     model: function () {
-        return project;
-    },
-    actions: {
-        check: function () {
-            blink('Neni jmeno');
-            if (project.get('name') == '') {
-                blink('Neni jmeno');
-            }
-        }
+        var a = new project(Communicator, 'ahoja', null, null);
+        return {
+            Project: a
+        };
     }
 });
 
 App.NewController = Ember.ObjectController.extend({
+    new_project: null
 });
 
 App.NewBaseController = Ember.ObjectController.extend({
     actions: {
         check: function () {
-            blink('Neni jmeno');
-            if (project.get('name') == '') {
-                blink('Neni jmeno');
+            if (this.get('model.Project').data.name != "" && this.get('model.Project').data.name != null) {
+                this.transitionTo('new.standards');
             }
         }
     }
 });
 
-App.NewStandardsController = Ember.ObjectController.extend({
-    csss: [
-        {name: 'CSS 2', version: '2'     },
-        {name: 'CSS 3', version: '3'     }
-    ],
-    htmls: [
-        {name: 'HTML 4.1', version: '4.1'   },
-        {name: 'HTML 5', version: '5'     }
-    ],
+App.NewStandardsRoute = Ember.Route.extend({
+    model: function () {
+        return {
+            csss: [
+                {name: 'CSS 2', version: '2'     },
+                {name: 'CSS 3', version: '3'     }
+            ],
+            htmls: [
+                {name: 'HTML 4.1', version: '4.1'   },
+                {name: 'HTML 5', version: '5'     }
+            ]
+        }
+    }
 });
 
 App.NewAdvancedController = Ember.ObjectController.extend({
@@ -69,14 +45,13 @@ App.NewAdvancedController = Ember.ObjectController.extend({
     ms: 'Prefixy pro Internet Explorer:',
     actions: {
         finish: function () {
-            if (ProjectIsSetUp()) {
-                //TODO: odeslat data DB
-                //this.transitionTo('project');
-                blink(project.name);
+            if (this.get('model.Project').IsSetUp()) {
+                this.get('model.Project').save();
             }
         }
     }
 });
+
 
 App.ProjectsRoute = Ember.Route.extend({
     model: function () {
@@ -85,7 +60,7 @@ App.ProjectsRoute = Ember.Route.extend({
 });
 
 App.ProjectRoute = Ember.Route.extend({
-    model: function(param) {
-        return Ember.$.getJSON('API/Project.php?id='+param.project_id);
+    model: function (param) {
+        return Ember.$.getJSON('API/Project.php?id=' + param.project_id);
     }
 });
